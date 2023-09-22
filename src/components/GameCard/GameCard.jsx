@@ -1,12 +1,18 @@
-import { Card, Img } from "./GameCard.styles";
+import { Card, Img, P, Description, Title, Span } from "./GameCard.styles";
 
 export const GameCard = ({ thumbnail, title, genre, publisher, developer }) => {
   return (
     <Card>
       <Img src={thumbnail} alt={title} />
-      <p>Genre: {genre}</p>
-      <p>Publisher: {publisher}</p>
-      <p>Developer: {developer}</p>
+      <Description>
+        <Title>
+          Title: <Span>{title}</Span>
+        </Title>
+        <P>Genre: {genre}</P>
+        <P>Publisher: {publisher}</P>
+        <P>Developer: {developer}</P>
+      </Description>
+      <button>Details</button>
     </Card>
   );
 };
