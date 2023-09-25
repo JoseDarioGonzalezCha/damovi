@@ -1,3 +1,4 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   DesktopContainer,
@@ -21,7 +22,12 @@ import { ImBrightnessContrast } from "react-icons/im";
 import { GiWarlockHood } from "react-icons/gi";
 import { SlMagnifier } from "react-icons/sl";
 
+//Context
+import { GameListContext } from "../../contexts/GameListContext";
+
 export const Menu = () => {
+  const { handleSearchInputChange, searchText } = useContext(GameListContext);
+
   return (
     <>
       <MenuContaciner>
@@ -32,7 +38,13 @@ export const Menu = () => {
           </LogoContainer>
 
           <SearchContainer>
-            <InputComponent />
+            <InputComponent
+              name="searchInput"
+              type="search"
+              placeholder="Search..."
+              value={searchText}
+              onChange={handleSearchInputChange}
+            />
 
             <SlMagnifier style={{ fontSize: "20px" }} />
           </SearchContainer>
