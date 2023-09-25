@@ -7,19 +7,19 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 15px 5px;
+  padding: 80px 5px;
 
   background-color: #dfdfdf;
 
   /* Mobile Medium */
   @media (min-width: 375px) {
-    padding: 20px 5px;
+    padding: 70px 5px;
     gap: 15px;
   }
 
   /* Mobile Large */
   @media (min-width: 414px) {
-    padding: 25px 5px;
+    padding: 70px 5px;
     gap: 20px;
   }
 
@@ -29,10 +29,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* align-items: center; */
-    /* justify-content: center; */
     gap: 20px;
-    padding: 30px 5px;
+    padding: 80px 5px;
   }
 
   /* Laptop Small */
@@ -43,7 +41,7 @@ export const Container = styled.div`
     flex-wrap: wrap;
 
     gap: 20px;
-    padding: 60px 5px;
+    padding: 80px 5px;
   }
 
   /* Desktop */
