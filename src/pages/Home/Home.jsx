@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 //Context
 import { GameListContext } from "../../contexts/GameListContext";
@@ -10,13 +10,13 @@ import { GameCard } from "../../components/GameCard/GameCard";
 import { Container } from "./Home.styles";
 import { Spinner } from "../../components/Spinner/Spinner";
 
-export const Home = () => {
-  const { gameList } = useContext(GameListContext);
+export const Home = ({}) => {
+  const { filteredGames } = useContext(GameListContext);
 
   return (
     <Container>
-      {gameList.length > 0 ? (
-        gameList.map((game, id) => (
+      {filteredGames.length > 0 ? (
+        filteredGames.map((game, id) => (
           <GameCard
             key={id}
             thumbnail={game.thumbnail}
