@@ -5,6 +5,8 @@ export const GameListContext = createContext();
 export default function GameListProvider({ children }) {
   const [gameList, setGameList] = useState([]);
 
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     fetchGame();
   }, []);
@@ -28,8 +30,26 @@ export default function GameListProvider({ children }) {
     }
   };
 
+  const handleSearchInputChange = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  const filteredGames = gameList.filter((game) =>
+    game.title.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
-    <GameListContext.Provider value={{ gameList, setGameList, fetchGame }}>
+    <GameListContext.Provider
+      value={{
+        gameList,
+        setGameList,
+        fetchGame,
+        filteredGames,
+        setSearchText,
+        searchText,
+        handleSearchInputChange,
+      }}
+    >
       {children}
     </GameListContext.Provider>
   );
